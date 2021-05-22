@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Yanwan Zhu" />
+
+
+<title>Women and Video Gaming in South Korea</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">EAL 273 Final Project</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="final_project.html">
+    <span class="fas fa-home"></span>
+     
+    Women and Video Gaming in South Korea
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Women and Video Gaming in South Korea</h1>
+<h4 class="author">Yanwan Zhu</h4>
+<h4 class="date">5/21/2021</h4>
+
+</div>
+
+
+<p>In <strong>South Korea, women</strong> take an active part in <strong>video gaming</strong>, which is considered a male-dominated industry globally. However, female pro-gamers and female gamemakers are still minority in the professional realm of video gaming industry in South Korea. In addition to the gender disparity in gaming industry, the online gaming culture in South Korea can be described as <a href="https://en.wikipedia.org/wiki/Antifeminism">anti-feminist</a> and hostile to women, leading to incidents similar to the <a href="https://en.wikipedia.org/wiki/Gamergate_controversy">GamerGate controversy</a> in the western media. In recent years, advocates for fight against sexism in video game industry are emerging in South Korea.</p>
+<hr />
+<div id="content" class="section level5">
+<h5><strong>Content</strong></h5>
+<ul>
+<li><a href="#numbers-and-statistics">Numbers and Statistics</a></li>
+<li><a href="#gender-issues-in-gaming-culture-and-industry">Gender issues in gaming culture and industry</a>
+<ul>
+<li><a href="#anti-feminism">Anti-feminism</a>
+<ul>
+<li><a href="#example-of-nardarck-and-x.d.-global">Example of Nardarck and X.D. Global</a></li>
+</ul></li>
+<li><a href="#sexism">Sexism</a></li>
+<li><a href="#potential-factors-of-gender-disparity">Potential factors of gender disparity</a>
+<ul>
+<li><a href="#gender-issues-in-sports">Gender issues in sports</a></li>
+<li><a href="#systemic-barrier-to-stem">Systemic Barrier to STEM</a></li>
+<li><a href="#pc-bang-culture">PC Bang culture</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#groups-and-organizations">Groups and organizations</a> - <a href="#famerz">FAMERZ</a></li>
+<li><a href="#famous-players">Famous players</a> - <a href="#geguri">Geguri</a> - <a href="#d.va">D.Va</a></li>
+<li><a href="#see-also">See also</a></li>
+<li><a href="#further-reading">Further Reading</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<hr />
+</div>
+<div id="numbers-and-statistics" class="section level1">
+<h1>Numbers and Statistics</h1>
+<p>According to a Nielsen Esports Fan Insights survey in 2018, women make up about 32% of the Esports fans in South Korea who have been engaged in esports for at least more than 4 years. In fact, South Korea is one of the countries with the highest proportion of longtime female fans. According to industry tracker Newzoo, 42 percent of all gamers in South Korea are women. However, female gamemakers make up less than 25% of the industry.</p>
+<p>Only 2 South Korean female player entered the list of top 100 female players ranked by the total prize money they won [top100female_player]. Geguri, who started playing Overwatch professionally since 2016, was the South Korea female player with the highest earning of $70,298.68. To compare, <a href="https://liquipedia.net/overwatch/Rascal">Rascal (Kim Dong Jun)</a>, a South Korean male player who also played Overwatch and made the first debut in 2016, earned a total amount of $331,108.68, ranking #64 in South Korea and #426 in the world.</p>
+</div>
+<div id="gender-issues-in-gaming-culture-and-industry" class="section level1">
+<h1>Gender issues in gaming culture and industry</h1>
+<div id="anti-feminism" class="section level2">
+<h2>Anti-feminism</h2>
+<p>Online gaming forums in South Korea are often dominated by young male users and hold an hostile attitude towards feminism. For women working in video game and closely related industries, associations with women’s right issues are likely to attract criticisms from online communities.</p>
+<p>South Korean gaming culture is sometimes described as targeting female employees in the gaming industry with “modern-day witch-hunts.” Many online gamers track female gamemakers’ social media account to track down content associated with feminism and women’s rights issues and file complaints to their employers <span class="citation">[<a href="#ref-jung2018dark" role="doc-biblioref">1</a>]</span>. According to one senior manager working at an online game company in South Korea, “these gamers relentlessly attack whoever posts anything slightly related to women’s rights issues, and label the person a <a href="https://en.wikipedia.org/wiki/Megalia">Megalia</a> supporter who should be sacked immediately”<span class="citation">[<a href="#ref-jung2018dark" role="doc-biblioref">1</a>]</span>. Many companies ended up firing or punishing accused employees because of the fear of boycott threat from users, which may influence game sales.</p>
+<div id="example-of-nardarck-and-x.d.-global" class="section level3">
+<h3>Example of Nardarck and X.D. Global</h3>
+<p>Kim Eun-hye, or <em>Nardack</em>, is a freelancing illustrator working in gaming industry in South Korea. Nardack got accused by South Korean online forum users of being a <a href="https://en.wikipedia.org/wiki/Megalia">“Megalian”</a>, a derogatory term for radical feminists, because she “liked” a tweet posted by her colleague, who was labeled as “Megalian.”</p>
+<p>Nardack’s colleague critiqued on Twitter how K-pop fans reacted towards Red Velvet’s Irene reading a feminist novel <span class="citation">[<a href="#ref-lee2018" role="doc-biblioref">2</a>]</span> and got labeled as “Megalian.” X.D. Global, the game company that Nardack and her colleague worked for, removed her colleague’s illustration because of the Twitter controversy. Nardack’s colleague later posted another tweet, which Nardack later “liked,” about not supporting the online group Megalia,.</p>
+<p>Multiple online forums began to spread Nardack’s name wile labeling her as a Megalian. Users of <a href="https://en.wikipedia.org/wiki/Azur_Lane">Azur Lane</a> Korea, a mobile game that Nardack illustrated for, protested against her because she was accused of supporting “anti-social” organization. <a href="https://www.xdg.com/">X.D. Global</a>, which was Nardack’s employer and the online game company that published the game Azur Lane, asked her to speak publicly against Megalia as well as feminism. After Nardack refused to do so, the game company removed her illustration work from the game<span class="citation">[<a href="#ref-n_statement" role="doc-biblioref">3</a>]</span>. It is not a rare incident for women in the video game industry to be called out for being a “Megalian” and for companies to inflict penalty on them, according to Nardack, who said “It’s around the tenth time I’ve seen a case like this in the industry.”<span class="citation">[<a href="#ref-kang2018taboo" role="doc-biblioref">4</a>]</span></p>
+</div>
+</div>
+<div id="sexism" class="section level2">
+<h2>Sexism</h2>
+<p>South Korean women who play online games often experience sexism and hostility from men during their gameplay. The gaming scene in South Korea holds the stereotypes that women are not excellent players and that women would have reached high rankings in video games through cheating or help from men <span class="citation">[<a href="#ref-kotaku" role="doc-biblioref">5</a>]</span>.</p>
+<p>Women are often verbally harassed by men in online games, so some female gamers try to conceal their gender identity online. However, it is sometimes difficult to do so because of the voice chat feature. Women reported being treated worse after revealing their female identity. For example, Geguri, the first female Overwatch pro-gamer in South Korea, said that sometimes male players did not want to team up with her when she used voice chat during gameplay <span class="citation">[<a href="#ref-espn_geguri" role="doc-biblioref">6</a>]</span>.</p>
+</div>
+<div id="potential-factors-of-gender-disparity" class="section level2">
+<h2>Potential factors of gender disparity</h2>
+<div id="gender-issues-in-sports" class="section level3">
+<h3>Gender issues in sports</h3>
+<p>Competitive video gaming, known as <a href="https://en.wikipedia.org/wiki/Esports">esports or electronic sports</a>, is recognized as an official sporting event in South Korea. The <a href="https://en.wikipedia.org/wiki/Korea_e-Sports_Association">Korea e-Sports Association</a> was founded in 2000 to manage esports and related industries. In South Korea, esports are broadcasted by specialized television channels just like traditional sports.</p>
+<p>Research on female athletes in South Korea suggests that women’s participation in sports has been influenced by the patriarchy <span class="citation">[<a href="#ref-korea_sport" role="doc-biblioref">7</a>]</span>. First, female athletes often experience various forms of sexism. Second, they need to confront the family-work conflicts. Third, they lack support from peers, mentors, and administrators. All of these factors may contribute to the difficult situation for women in sports.</p>
+</div>
+<div id="systemic-barrier-to-stem" class="section level3">
+<h3>Systemic Barrier to STEM</h3>
+<p>South Korea requires male citizens to <a href="https://en.wikipedia.org/wiki/Conscription_in_South_Korea">perform mandatory military service before the age of 28</a>. However, science and engineering graduates who work as technical experts or researchers in universities and research departments of companies may be exempted from mandatory military duty. Chee (2016) suggested that small-medium game companies are able to keep young male students STEM at their workforce by substituting military service requirement with 3 to 5 years of skill building and networking. Women would not have the same opportunity and are therefore disadvantaged in the gaming industry <span class="citation">[<a href="#ref-chee2016game" role="doc-biblioref">8</a>]</span>.</p>
+</div>
+<div id="pc-bang-culture" class="section level3">
+<h3>PC Bang culture</h3>
+<p>The popularity of video gaming in South Korea is often attributed to its <a href="https://en.wikipedia.org/wiki/Internet_in_South_Korea">internet infrastructure</a> and prevalence of PC Bangs. <a href="https://en.wikipedia.org/wiki/PC_bang">PC Bang</a> is a type of internet cafe in South Korea that provides access to computer and internet to customers for an hourly cost. PC Bang is popular in South Korean because of it provides access to gaming personal computers at a low hourly cost and good social scenes for gamers.</p>
+<p>However, in general, PC Bang in South Korea is a male-dominated space with very few female presence. It is considered unusual for young women to visit PC Bang <span class="citation">[<a href="#ref-rea2019chronotopes" role="doc-biblioref">9</a>]</span>.</p>
+</div>
+</div>
+</div>
+<div id="groups-and-organizations" class="section level1">
+<h1>Groups and organizations</h1>
+<div id="famerz" class="section level3">
+<h3>FAMERZ</h3>
+<p>FAMERZ is a feminist gamers’ group in South Korea. The group was initially formed in 2016 to protest against the former president of South Korea Park Geun-Hye. After the president resigned, the members decided to keep the group and to continue fighting for gender equality in South Korea and in its video game industry.</p>
+<p>The original name of the group was <em>National D.Va Association</em> or <em>For D.Va</em>. On January 31, 2018, National D.va Association changed its name to FAMERZ, which stands for feminist-gamerz (gamers) or female-gamerz (gamerz) <span class="citation">[<a href="#ref-change_dva" role="doc-biblioref">10</a>]</span>. According to the FAMERZ website, the feminist gamer association changed its name because they want to “(f)ight for not only sexist and misogyny in OVERWATCH, but also other games - eventually to fight against sexist [and] misogyny in the whole game industry.” <span class="citation">[<a href="#ref-change_dva" role="doc-biblioref">10</a>]</span></p>
+<p>FAMERZ took part in Women’s March in Seoul on January 20, 2017. In addition to marching and protesting, FAMERZ hold regular feminist book-reading events, online game parties, and movie nights. They also attend workshops and lectures to discuss gender problems related to video games and promote feminist awareness in the industry.</p>
+<div class="figure">
+<img src="https://pbs.twimg.com/media/C2sWDEKXUAAneqz?format=jpg&amp;name=medium" alt="" />
+<p class="caption">Nation D.Va Association at Women’s March in Seoul, Korea</p>
+</div>
+<p>FAMERZ’s activism is not limited to issues in the gaming industry. FAMERZ has participated in a range of demonstrations and activities on broader topics of gender equality and human rights; the themes include abortion rights, LGBTQ rights, sexual violence, etc.</p>
+<p>FAMERZ was featured in the book titled <em>Women Who Became Tidal Waves</em> written by Kim Bohwa and Kim Bo Young. Published in 2019, the book includes interviews and narratives of South Korean feminists that are active on the internet.</p>
+</div>
+</div>
+<div id="famous-players" class="section level1">
+<h1>Famous players</h1>
+<div id="geguri" class="section level3">
+<h3>Geguri</h3>
+<p><a href="https://en.wikipedia.org/wiki/Geguri">Se-yeon Kim or <em>Geguri</em></a> is a South Korean professional gamer playing Overwatch. Kim started her esports career in 2016 as the first female player in Korean tournament Overwatch APEX. She was also the first female player to be signed to an Overwatch League team.</p>
+<p>Geguri became famous because of controversies around her gameplay in a competition. She was accused of cheating using <a href="https://en.wikipedia.org/wiki/Cheating_in_online_games#Aimbots_and_triggerbots">an aim bot</a>, but later demonstrated her skills by streaming her gameplay with surveillance cameras focusing on her hands.</p>
+<p><img src="https://cdn1.dotesports.com/wp-content/uploads/2018/08/11102147/ce75a60b-9f30-4d7c-b0ac-259a82879b42.jpg" /></p>
+</div>
+<div id="d.va" class="section level3">
+<h3>D.Va</h3>
+<p><a href="https://en.wikipedia.org/wiki/D.Va">D.Va</a> is a fictional character who appears in <a href="https://en.wikipedia.org/wiki/Overwatch_(video_game)"><em>Overwatch</em></a>, a multiplayer <a href="https://en.wikipedia.org/wiki/First-person_shooter">first-person shooter (FPS)</a> developed by Blizzard Entertainment. In the game, D.Va is a <a href="https://en.wikipedia.org/wiki/Tank_(video_games)">tank</a> character with strong shield ability.</p>
+<p>The character is designed as a 19-year-old South Korean girl gamer who became the No.1 ranked StarCraft II player when she was 16. D.Va’ real name is Hana Song (송하나) , and “D.Va” is her gamertag. She came from Busan, South Korea, and used to be a professional esports gamer before she retired and served in the Mobile Exo-Force of the Korean Army (MEKA). She was able to apply her video game skills to controlling weaponized <a href="https://en.wikipedia.org/wiki/Mecha">mechs</a> in battles.</p>
+<p><img src="https://bnetcmsus-a.akamaihd.net/cms/blog_header/lw/LWQJXDWUC6VA1598910918450.jpg" /></p>
+<p>D.Va is seen as a feminist icon by South Korean feminist gamer group FAMERZ, which used to be active under the name of “National D.va Association” or “For D.Va.” FAMERZ chose D.Va as their mascot because they believed that “in a sexist country like ours (South Korea), it would be impossible for a person like her to appear. So we decided to act for feminism under D.Va’s emblem, so that in 2060, someone like her could actually appear.”<span class="citation">[<a href="#ref-intro_dva" role="doc-biblioref">11</a>]</span></p>
+</div>
+</div>
+<div id="see-also" class="section level1">
+<h1>See also</h1>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Women_and_video_games">Women and video games</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Sexism_and_video_games">Sexism and video games</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Gender_representation_in_video_games">Gender representation in video games</a></li>
+</ul>
+</div>
+<div id="further-reading" class="section level1">
+<h1>Further Reading</h1>
+<ul>
+<li>Cullen, A. L. (2018). “I play to win!”: Geguri as a (post) feminist icon in esports. Feminist Media Studies, 18(5), 948-952. DOI: <a href="https://www.tandfonline.com/doi/abs/10.1080/14680777.2018.1498112">10.1080/14680777.2018.1498112</a></li>
+<li>Choi, Y., Slaker, J. S., &amp; Ahmad, N. (2020). Deep strike: playing gender in the world of Overwatch and the case of Geguri. Feminist Media Studies, 20(8), 1128-1143. DOI: <a href="https://www.tandfonline.com/doi/full/10.1080/14680777.2019.1643388">10.1080/14680777.2019.1643388</a></li>
+<li>Huhh, J. S. (2009). The “Bang” Where Korean Online Gaming Began: The Culture and Business of the PC bang in Korea. In Gaming Cultures and Place in Asia-Pacific (pp. 118-132). Routledge.</li>
+</ul>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-jung2018dark" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Jung H. Dark side of play for s. Korea’s female game makers. AFP News. 2018. Available: <a href="https://ph.news.yahoo.com/dark-side-play-koreas-female-game-makers-044816687–finance.html">https://ph.news.yahoo.com/dark-side-play-koreas-female-game-makers-044816687–finance.html</a></div>
+</div>
+<div id="ref-lee2018" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Lee C. Feminist novel becomes center of controversy in south korea. The Korea Herald. 2018. Available: <a href="http://www.koreaherald.com/view.php?ud=20180327000799">http://www.koreaherald.com/view.php?ud=20180327000799</a></div>
+</div>
+<div id="ref-n_statement" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Nardack. This is a statement regarding azur lane korea’s take down of my illustration. 2018. Available: <a href="https://www.evernote.com/shard/s491/client/snv?noteGuid=7df8ee43-54e1-45bd-b550-6ebe2e5e923e&amp;noteKey=408e83b77178d5712f1557a2bb86eda7&amp;sn=https">https://www.evernote.com/shard/s491/client/snv?noteGuid=7df8ee43-54e1-45bd-b550-6ebe2e5e923e&amp;noteKey=408e83b77178d5712f1557a2bb86eda7&amp;sn=https</a></div>
+</div>
+<div id="ref-kang2018taboo" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Kang H. Feminism is taboo in s. Korea’s gaming industry. Korea Exposé. 2018. Available: <a href="https://www.koreaexpose.com/feminism-taboo-koreas-gaming-industry/">https://www.koreaexpose.com/feminism-taboo-koreas-gaming-industry/</a></div>
+</div>
+<div id="ref-kotaku" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Deyo N. D.va from overwatch has become a symbol of hope in real life. Kotaku. 2017. Available: <a href="https://kotaku.com/d-va-from-overwatch-has-become-a-symbol-of-hope-in-real-1792147467">https://kotaku.com/d-va-from-overwatch-has-become-a-symbol-of-hope-in-real-1792147467</a></div>
+</div>
+<div id="ref-espn_geguri" class="csl-entry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Kimes M. Game: Interrupted; how a teenage gamer in the hottest new esport, overwatch, became a reluctant icon for south korea’s feminist movement. ESPN. 2017. Available: <a href="https://www.espn.com/espn/feature/story/_/id/20692051/how-teenage-gamer-became-reluctant-icon-south-korea-feminist-movement">https://www.espn.com/espn/feature/story/_/id/20692051/how-teenage-gamer-became-reluctant-icon-south-korea-feminist-movement</a></div>
+</div>
+<div id="ref-korea_sport" class="csl-entry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Podoler G. South korea: Women and sport in a persistent patriarchy. The routledge handbook of sport in asia. Routledge; 2020. doi:<a href="https://doi.org/10.4324/9780429061202-35">10.4324/9780429061202-35</a></div>
+</div>
+<div id="ref-chee2016game" class="csl-entry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Chee FM. A game industry beyond diversity: Systemic barriers to participation in south korea. 2016. Available: <a href="https://ecommons.luc.edu/cgi/viewcontent.cgi?article=1018&amp;context=communication_facpubs">https://ecommons.luc.edu/cgi/viewcontent.cgi?article=1018&amp;context=communication_facpubs</a></div>
+</div>
+<div id="ref-rea2019chronotopes" class="csl-entry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Rea SC. Chronotopes and social types in south korean digital gaming. Signs and Society. 2019;7: 115–136. </div>
+</div>
+<div id="ref-change_dva" class="csl-entry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">FAMERZ. The reason to alter association’s name. Available: <a href="https://famerz.tumblr.com/post/170345104250/notice-">https://famerz.tumblr.com/post/170345104250/notice-</a></div>
+</div>
+<div id="ref-intro_dva" class="csl-entry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">FAMERZ. Introduction to the national d.va association. Available: <a href="https://famerz.tumblr.com/post/156308195090/introduction-to-the-national-dva">https://famerz.tumblr.com/post/156308195090/introduction-to-the-national-dva</a></div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -8,16 +8,15 @@ output:
     toc: true
     toc_depth: 3
     toc_float: true
-    toc_collapsed: true
-toc-title: "Contents"
     #number_sections: true
 bibliography: final_project_ref.bib 
 csl: plos-one.csl
 link-citations: true
+
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
+library(rmarkdown)
 ```
 
 ```{r}

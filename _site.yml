@@ -1,0 +1,20 @@
+name: "www"
+output_dir: "../docs"
+navbar:
+  title: "EAL 273 Final Project"
+  left:
+    - text: "Women and Video Gaming in South Korea"
+      icon: fa-home
+      href: final_project.html
+
+
+output: 
+  html_document:
+    theme: sandstone
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    #number_sections: true
+bibliography: final_project_ref.bib 
+csl: plos-one.csl
+link-citations: true
