@@ -1,0 +1,175 @@
+---
+title: " Women and Video Gaming in South Korea"
+author: "Yanwan Zhu"
+date: "5/21/2021"
+output: 
+  html_document:
+    theme: sandstone
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    toc_collapsed: true
+toc-title: "Contents"
+    #number_sections: true
+bibliography: final_project_ref.bib 
+csl: plos-one.csl
+link-citations: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{r}
+render_toc <- function(
+  filename, 
+  toc_header_name = "Table of Contents",
+  base_level = NULL,
+  toc_depth = 3
+) {
+  x <- readLines(filename, warn = FALSE)
+  x <- paste(x, collapse = "\n")
+  x <- paste0("\n", x, "\n")
+  for (i in 5:3) {
+    regex_code_fence <- paste0("\n[`]{", i, "}.+?[`]{", i, "}\n")
+    x <- gsub(regex_code_fence, "", x)
+  }
+  x <- strsplit(x, "\n")[[1]]
+  x <- x[grepl("^#+", x)]
+  if (!is.null(toc_header_name)) 
+    x <- x[!grepl(paste0("^#+ ", toc_header_name), x)]
+  if (is.null(base_level))
+    base_level <- min(sapply(gsub("(#+).+", "\\1", x), nchar))
+  start_at_base_level <- FALSE
+  x <- sapply(x, function(h) {
+    level <- nchar(gsub("(#+).+", "\\1", h)) - base_level
+    if (level < 0) {
+      stop("Cannot have negative header levels. Problematic header \"", h, '" ',
+           "was considered level ", level, ". Please adjust `base_level`.")
+    }
+    if (level > toc_depth - 1) return("")
+    if (!start_at_base_level && level == 0) start_at_base_level <<- TRUE
+    if (!start_at_base_level) return("")
+    if (grepl("\\{#.+\\}(\\s+)?$", h)) {
+      # has special header slug
+      header_text <- gsub("#+ (.+)\\s+?\\{.+$", "\\1", h)
+      header_slug <- gsub(".+\\{\\s?#([-_.a-zA-Z]+).+", "\\1", h)
+    } else {
+      header_text <- gsub("#+\\s+?", "", h)
+      header_text <- gsub("\\s+?\\{.+\\}\\s*$", "", header_text) # strip { .tabset ... }
+      header_text <- gsub("^[^[:alpha:]]*\\s*", "", header_text) # remove up to first alpha char
+      header_slug <- paste(strsplit(header_text, " ")[[1]], collapse="-")
+      header_slug <- tolower(header_slug)
+    }
+    paste0(strrep(" ", level * 4), "- [", header_text, "](#", header_slug, ")")
+  })
+  x <- x[x != ""]
+  knitr::asis_output(paste(x, collapse = "\n"))
+}
+```
+
+
+In **South Korea, women** take an active part in **video gaming**, which is considered a male-dominated industry globally. However, female pro-gamers and female gamemakers are still minority in the professional realm of video gaming industry in South Korea. In addition to the gender disparity in gaming industry, the online gaming culture in South Korea can be described as [anti-feminist](https://en.wikipedia.org/wiki/Antifeminism) and hostile to women, leading to incidents similar to the [GamerGate controversy](https://en.wikipedia.org/wiki/Gamergate_controversy) in the western media. In recent years, advocates for fight against sexism in video game industry are emerging in South Korea. 
+
+----
+
+##### **Content**
+
+```{r toc}
+render_toc("final_project.Rmd")
+```
+
+----
+
+# Numbers and Statistics
+
+According to a Nielsen Esports Fan Insights survey in 2018, women make up about 32% of the Esports fans in South Korea who have been engaged in esports for at least more than 4 years. In fact, South Korea is one of the countries with the highest proportion of longtime female fans. According to industry tracker Newzoo, 42 percent of all gamers in South Korea are women. However, female gamemakers make up less than 25% of the industry.
+
+Only 2 South Korean female player entered the list of top 100 female players ranked by the total prize money they won [top100female_player]. Geguri, who started playing Overwatch professionally since 2016, was the South Korea female player with the highest earning of \$70,298.68. To compare, [Rascal (Kim Dong Jun)](https://liquipedia.net/overwatch/Rascal), a South Korean male player who also played Overwatch and made the first debut in 2016, earned a total amount of \$331,108.68, ranking #64 in South Korea and #426 in the world.
+
+# Gender issues in gaming culture and industry
+## Anti-feminism
+
+Online gaming forums in South Korea are often dominated by young male users and hold an hostile attitude towards feminism. For women working in video game and closely related industries, associations with women's right issues are likely to attract criticisms from online communities. 
+
+South Korean gaming culture is sometimes described as targeting female employees in the gaming industry with "modern-day witch-hunts". Many online gamers track female gamemakers' social media account to track down content associated with feminism and women's rights issues and file complaints to their employers [@jung2018dark]. According to one senior manager working at an online game company in South Korea, "these gamers relentlessly attack whoever posts anything slightly related to women's rights issues, and label the person a [Megalia](https://en.wikipedia.org/wiki/Megalia) supporter who should be sacked immediately"[@jung2018dark]. Many companies ended up firing or punishing accused employees because of the fear of boycott threat from users, which may influence game sales.
+
+### Example of Nardarck and X.D. Global
+Kim Eun-hye, or *Nardack*, is a freelancing illustrator working in gaming industry in South Korea. Nardack got accused by South Korean online forum users of being a ["Megalian"](https://en.wikipedia.org/wiki/Megalia), a derogatory term for radical feminists, because she "liked" a tweet posted by her colleague, who was labeled as "Megalian". 
+
+Nardack's colleague critiqued on Twitter how K-pop fans reacted towards Red Velvet's Irene reading a feminist novel [@lee2018] and got labeled as "Megalian". X.D. Global, the game company that Nardack and her colleague worked for, removed her colleague's illustration because of the Twitter controversy. Nardack's colleague later posted another tweet, which Nardack later "liked", about not supporting the online group Megalia,. 
+
+Multiple online forums began to spread Nardack's name wile labeling her as a Megalian. Users of [Azur Lane](https://en.wikipedia.org/wiki/Azur_Lane) Korea, a mobile game that Nardack illustrated for, protested against her because she was accused of supporting "anti-social" organization. [X.D. Global](https://www.xdg.com/), which was Nardack's employer and the online game company that published the game Azur Lane, asked her to speak publicly against Megalia as well as feminism. After Nardack refused to do so, the game company removed her illustration work from the game[@n_statement]. It is not a rare incident for women in the video game industry to be called out for being a "Megalian" and for companies to inflict penalty on them, according to Nardack, who said "It's around the tenth time I've seen a case like this in the industry."[@kang2018taboo]
+
+## Sexism 
+
+South Korean women who play online games often experience sexism and hostility from men during their gameplay. The gaming scene in South Korea holds the stereotypes that women are not excellent players and that women would have reached high rankings in video games through cheating or help from men [@kotaku].
+
+Women are often verbally harassed by men in online games, so some female gamers try to conceal their gender identity online. However, it is sometimes difficult to do so because of the voice chat feature. Women reported being treated worse after revealing their female identity. For example, Geguri, the first female Overwatch pro-gamer in South Korea, said that sometimes male players did not want to team up with her when she used voice chat during gameplay [@espn_geguri].
+
+## Potential factors of gender disparity
+### Gender issues in sports
+
+Competitive video gaming, known as [esports or electronic sports](https://en.wikipedia.org/wiki/Esports), is recognized as an official sporting event in South Korea. The [Korea e-Sports Association](https://en.wikipedia.org/wiki/Korea_e-Sports_Association) was founded in 2000 to manage esports and related industries. In South Korea, esports are broadcasted by specialized television channels just like traditional sports.
+
+Research on female athletes in South Korea suggests that women's participation in sports has been influenced by the patriarchy [@korea_sport]. First, female athletes often experience various forms of sexism. Second, they need to confront the family-work conflicts. Third, they lack support from peers, mentors, and administrators. All of these factors may contribute to the difficult situation for women in sports.
+
+### Systemic Barrier to STEM
+
+South Korea requires male citizens to [perform mandatory military service before the age of 28](https://en.wikipedia.org/wiki/Conscription_in_South_Korea). However, science and engineering graduates who work as technical experts or researchers in universities and research departments of companies may be exempted from mandatory military duty. Chee (2016) suggested that small-medium game companies are able to keep young male students STEM at their workforce by substituting military service requirement with 3 to 5 years of skill building and networking. Women would not have the same opportunity and are therefore disadvantaged in the gaming industry [@chee2016game].
+
+### PC Bang culture
+
+The popularity of video gaming in South Korea is often attributed to its [internet infrastructure](https://en.wikipedia.org/wiki/Internet_in_South_Korea) and prevalence of PC Bangs. [PC Bang](https://en.wikipedia.org/wiki/PC_bang) is a type of internet cafe in South Korea that provides access to computer and internet to customers for an hourly cost. PC Bang is popular in South Korean because of it provides access to gaming personal computers at a low hourly cost and good social scenes for gamers.
+
+However, in general, PC Bang in South Korea is a male-dominated space with very few female presence. It is considered unusual for young women to visit PC Bang [@rea2019chronotopes]. 
+
+# Groups and organizations
+### FAMERZ
+
+FAMERZ is a feminist gamers' group in South Korea. The group was initially formed in 2016 to protest against the former president of South Korea Park Geun-Hye. After the president resigned, the members decided to keep the group and to continue fighting for gender equality in South Korea and in its video game industry.
+
+The original name of the group was *National D.Va Association* or *For D.Va*. On January 31, 2018, National D.va Association changed its name to FAMERZ, which stands for feminist-gamerz (gamers) or female-gamerz (gamerz) [@change_dva]. According to the FAMERZ website, the feminist gamer association changed its name because they want to "(f)ight for not only sexist and misogyny in OVERWATCH, but also other games - eventually to fight against sexist [and] misogyny in the whole game industry." [@change_dva]
+
+FAMERZ took part in Women's March in Seoul on January 20, 2017. In addition to marching and protesting, FAMERZ hold regular feminist book-reading events, online game parties, and movie nights. They also attend workshops and lectures to discuss gender problems related to video games and promote feminist awareness in the industry. 
+
+![Nation D.Va Association at Women's March in Seoul, Korea](https://pbs.twimg.com/media/C2sWDEKXUAAneqz?format=jpg&name=medium)
+
+FAMERZ’s activism is not limited to issues in the gaming industry. FAMERZ has participated in a range of demonstrations and activities on broader topics of gender equality and human rights; the themes include abortion rights, LGBTQ rights, sexual violence, etc.
+
+FAMERZ was featured in the book titled *Women Who Became Tidal Waves* written by Kim Bohwa and Kim Bo Young. Published in 2019, the book includes interviews and narratives of South Korean feminists that are active on the internet.
+
+# Famous players
+
+### Geguri
+
+[Se-yeon Kim or *Geguri*](https://en.wikipedia.org/wiki/Geguri) is a South Korean professional gamer playing Overwatch. Kim started her esports career in 2016 as the first female player in Korean tournament Overwatch APEX. She was also the first female player to be signed to an Overwatch League team.
+
+Geguri became famous because of controversies around her gameplay in a competition. She was accused of cheating using [an aim bot](https://en.wikipedia.org/wiki/Cheating_in_online_games#Aimbots_and_triggerbots), but later demonstrated her skills by streaming her gameplay with surveillance cameras focusing on her hands.
+
+![](https://cdn1.dotesports.com/wp-content/uploads/2018/08/11102147/ce75a60b-9f30-4d7c-b0ac-259a82879b42.jpg)
+
+### D.Va
+
+[D.Va](https://en.wikipedia.org/wiki/D.Va) is a fictional character who appears in [*Overwatch*](https://en.wikipedia.org/wiki/Overwatch_(video_game)), a multiplayer [first-person shooter (FPS)](https://en.wikipedia.org/wiki/First-person_shooter) developed by Blizzard Entertainment. In the game, D.Va is a [tank](https://en.wikipedia.org/wiki/Tank_(video_games)) character with strong shield ability.
+
+The character is designed as a 19-year-old South Korean girl gamer who became the No.1 ranked StarCraft II player when she was 16.
+D.Va' real name is Hana Song (송하나) , and "D.Va" is her gamertag. She came from Busan, South Korea, and used to be a professional esports gamer before she retired and served in the Mobile Exo-Force of the Korean Army (MEKA). She was able to apply her video game skills to controlling weaponized [mechs](https://en.wikipedia.org/wiki/Mecha) in battles.
+
+![](https://bnetcmsus-a.akamaihd.net/cms/blog_header/lw/LWQJXDWUC6VA1598910918450.jpg)
+
+D.Va is seen as a feminist icon by South Korean feminist gamer group FAMERZ, which used to be active under the name of "National D.va Association" or "For D.Va". FAMERZ chose D.Va as their mascot because they believed that "in a sexist country like ours (South Korea), it would be impossible for a person like her to appear. So we decided to act for feminism under D.Va’s emblem, so that in 2060, someone like her could actually appear."[@intro_dva]
+
+# See also
+* [Women and video games](https://en.wikipedia.org/wiki/Women_and_video_games)
+* [Sexism and video games](https://en.wikipedia.org/wiki/Sexism_and_video_games)
+* [Gender representation in video games](https://en.wikipedia.org/wiki/Gender_representation_in_video_games)
+
+
+
+# Further Reading
+* Cullen, A. L. (2018). “I play to win!”: Geguri as a (post) feminist icon in esports. Feminist Media Studies, 18(5), 948-952. DOI: [10.1080/14680777.2018.1498112](https://www.tandfonline.com/doi/abs/10.1080/14680777.2018.1498112)
+* Choi, Y., Slaker, J. S., & Ahmad, N. (2020). Deep strike: playing gender in the world of Overwatch and the case of Geguri. Feminist Media Studies, 20(8), 1128-1143. DOI: [10.1080/14680777.2019.1643388](https://www.tandfonline.com/doi/full/10.1080/14680777.2019.1643388)
+* Huhh, J. S. (2009). The “Bang” Where Korean Online Gaming Began: The Culture and Business of the PC bang in Korea. In Gaming Cultures and Place in Asia-Pacific (pp. 118-132). Routledge.
+
+# References
